@@ -1,0 +1,250 @@
+:root{
+    /* Primary Colors */
+    --moderate-violet: hsl(263, 55%, 52%);
+    --moderate-violet-light: hsl(263, 55%, 70%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+   
+
+    /*  Neutral Colors */
+    
+    --light-grayish-blue: hsl(210, 46%, 95%);
+
+    /* Text Color 1 */
+
+    --light-gray: hsl(0, 0%, 81%);
+    --white: hsl(0, 0%, 100%);
+    --white-verified: hsl(0,0%,50%);
+    --white-paragraph: hsl(0,0%,70%);
+    /* Text Color 2 */
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-grayish-blue-verified: hsl(217, 19%, 50%);
+    --very-dark-grayish-blue-paragraph: hsl(217, 19%, 70%);
+
+    /* Font size */
+    
+    --verified-font-size:0.75rem;
+    --title-font-size:1.25rem;
+    --body-font-size:0.8125rem;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: var(--light-grayish-blue);
+    max-width: 90rem;
+    min-width: 23.4375rem;
+    
+    margin: auto;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+   
+    
+
+    
+}
+
+.container{
+    
+    width: 90%;
+    margin: 9.375rem auto;
+    display: grid;
+    gap: 1.875rem;
+    grid-template-columns: repeat(4, minmax(16.25rem, 1fr));
+    grid-template-rows: repeat(2, 17.5rem);
+    grid-template-areas: "card-1 card-1 card-2 card-3"
+                          "card-4 card-5 card-5 card-3";
+    
+                      
+}
+
+.container .card{
+    background: violet;
+    border-radius: 0.3125rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: 0 0.625rem 0.0625rem var(--light-grayish-blue);
+
+}
+
+.card .content{
+    height: 100%;
+    
+    margin: 1.875rem 1.875rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    
+}
+.card-header{
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.card-header img{
+    width: 1.875rem;
+    
+    border-radius: 1.125rem;
+
+}
+
+.card-1 .card-header img,
+.card-5 .card-header img{
+    border: 0.125rem solid var(--moderate-violet-light);
+}
+
+.card-name{
+    position: absolute;
+    left: 2.8125rem;
+}
+.card-name p{
+    font-size: var(--body-font-size);
+    font-style: bold;
+
+}
+
+.card-name .verified{
+    font-size: var(--verified-font-size);
+
+}
+
+.content .title{
+    font-size: var(--title-font-size);
+    font-style: bold;
+    width: 93%;
+}
+
+.content .text{
+    font-size: var(--body-font-size);
+    line-height: 1.125rem;
+    width: 95%;
+
+}
+
+.container .card-1{
+   position: relative;
+    grid-area: card-1;
+    background: var(--moderate-violet);
+
+}
+.container .card-1 .quotation{
+    position: absolute;
+    z-index: 1;
+    left:70%;
+}
+.container .card-1 .card-header,
+.container .card-1 .title{
+    z-index: 2;
+}
+
+.container .card-2{
+    grid-area: card-2;
+    background: var(--very-dark-grayish-blue);
+}
+
+.container .card-3{
+    grid-area: card-3;
+    background: var(--white);
+}
+
+.container .card-4{
+    grid-area: card-4;
+    background: var(--white);
+}
+
+.container .card-5{
+    grid-area: card-5;
+    background: var(--very-dark-blackish-blue)
+}
+
+.card-1 .content .title,
+.card-2 .content .title,
+.card-5 .content .title{
+    color: var(--light-grayish-blue);
+}
+.card-1 .content .card-name p,
+.card-2 .content .card-name p,
+.card-5 .content .card-name p{
+    color: var(--light-grayish-blue);
+}
+
+.card-1 .content .card-name .verified,
+.card-2 .content .card-name .verified,
+.card-5 .content .card-name .verified{
+    color: var(--white-verified);
+}
+.card-1 .content .text,
+.card-2 .content .text,
+.card-5 .content .text{
+    color: var(--white-paragraph);
+}
+
+.card-3 .content .title,
+.card-4 .content .title{
+    color: var(--very-dark-grayish-blue);
+}
+
+.card-3 .content .card-name p,
+.card-4 .content .card-name p{
+    color: var(--very-dark-grayish-blue);
+}
+
+.card-3 .content .card-name .verified,
+.card-4 .content .card-name .verified{
+    color: var(--very-dark-grayish-blue-verified);
+}
+
+.card-3 .content .text,
+.card-4 .content .text{
+    color: var(--very-dark-grayish-blue-paragraph);
+}
+
+
+@media screen and (max-width: 78.125rem){
+    .container{
+        margin:3.125rem auto;
+        grid-template-columns: repeat(3, minmax(16.25rem, 1fr));
+        grid-template-rows: repeat(3, 17.5rem);
+        grid-template-areas: "card-1 card-1 card-2"
+                            "card-4 card-5 card-5"
+                            "card-3 card-3 card-3";
+    }
+}
+@media screen and (max-width: 59.375rem){
+    .container{
+        grid-template-columns: repeat(2, minmax(12.5rem, 1fr));
+        grid-template-rows: repeat(4, minmax(16.25rem, auto));
+        grid-template-areas: "card-1 card-1"
+                             "card-2 card-4"
+                            "card-5 card-5"
+                            "card-3 card-3";
+
+    }
+}
+
+@media screen and (max-width:30rem){
+
+    .container .card-1 .quotation{
+        position: absolute;
+        z-index: 1;
+        left:60%;
+    }
+    .container{
+        grid-template-columns: repeat(1, minmax(20.625rem, 1fr));
+        grid-template-rows: repeat(5,minmax(14.375rem, auto));
+        grid-template-areas: "card-1"
+                             "card-2"
+                             "card-4"
+                             "card-5"
+                             "card-3";
+    }
+    
+}
+
